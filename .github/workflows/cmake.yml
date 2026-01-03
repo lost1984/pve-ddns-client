@@ -19,7 +19,7 @@ jobs:
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
     strategy:
       matrix:
-        platform: [ubuntu-20.04, macos-11, windows-latest]
+        platform: [ubuntu-20.04]
     runs-on: ${{ matrix.platform }}
 
     steps:
@@ -95,3 +95,4 @@ jobs:
           ${{github.workspace}}\build\${{env.BUILD_TYPE}}\pve-ddns-client.exe
           ${{github.workspace}}\build\*.yml
       if: runner.os == 'Windows'
+
